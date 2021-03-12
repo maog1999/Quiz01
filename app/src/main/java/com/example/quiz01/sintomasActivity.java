@@ -43,44 +43,95 @@ public class sintomasActivity extends AppCompatActivity {
         idContra = getIntent().getExtras().getString("idContra");
         ptRiesgo = getIntent().getExtras().getInt("ptRiesgo");
 
+        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
 
         btnFinalizar.setOnClickListener(
                 (v)->{
-                    checkboxs();
 
                     //validacion de si ya oprimio las boxes y pueda continuar
                     if(checkBox1.isChecked() == true || checkBox2.isChecked() == true || checkBox3.isChecked() == true || checkBox4.isChecked() == true ||
                     checkBox5.isChecked() == true || checkBox6.isChecked() == true || checkBox7.isChecked() == true){
-                        btnFinalizar.setBackgroundColor(Color.parseColor("#AAD123"));
                         Intent m = new Intent(this, MainActivity.class);
                         saveData();
                         startActivity(m);
                         finish();
-                    }else {
-                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
                     }
 
                 }
         );
+
+        checkBox1.setOnClickListener(
+                (v)-> {
+                    if (checkBox1.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 4;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        checkBox2.setOnClickListener(
+                (v)->{
+                    if (checkBox2.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 4;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        checkBox3.setOnClickListener(
+                (v)->{
+                    if (checkBox3.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 4;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        checkBox4.setOnClickListener(
+                (v)->{
+                    if (checkBox4.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 4;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        checkBox5.setOnClickListener(
+                (v)->{
+                    if (checkBox5.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 4;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        checkBox6.setOnClickListener(
+                (v)->{
+                    if (checkBox6.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 4;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        checkBox7.setOnClickListener(
+                (v)->{
+                    if (checkBox7.isChecked()) {
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 0;
+                    }else{
+                        btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
     }
 
-    private void checkboxs(){
-        if(checkBox1.isChecked()){
-            ptRiesgo += 4;
-        }if (checkBox2.isChecked()){
-            ptRiesgo += 4;
-        }if(checkBox3.isChecked()){
-            ptRiesgo += 4;
-        }if(checkBox4.isChecked()){
-            ptRiesgo += 4;
-        }if(checkBox5.isChecked()){
-            ptRiesgo +=4;
-        }if(checkBox6.isChecked()){
-            ptRiesgo +=4;
-        }if(checkBox7.isChecked()){
-            ptRiesgo +=0;
-        }
-    }
 
     private void saveData(){
         SharedPreferences preferences = getSharedPreferences("datos", MODE_PRIVATE); //lave para guardar todos los datos

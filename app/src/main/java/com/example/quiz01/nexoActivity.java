@@ -33,6 +33,7 @@ public class nexoActivity extends AppCompatActivity {
         check5 = findViewById(R.id.check5);
         btnContinuar2 = findViewById(R.id.btnContinuar2);
 
+        btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
 
         //Recoleccion de info
         username = getIntent().getExtras().getString("username");
@@ -40,11 +41,9 @@ public class nexoActivity extends AppCompatActivity {
 
         Log.e("->", "" + ptRiesgo);
 
-        cambioBoton();
 
         btnContinuar2.setOnClickListener(
                 (v)->{
-                    checkboxs();
 
                     //validacion de si ya oprimio las boxes y pueda continuar
                     if(check1.isChecked() == true || check2.isChecked()==true || check3.isChecked()==true || check4.isChecked()==true || check5.isChecked()==true ) {
@@ -57,42 +56,59 @@ public class nexoActivity extends AppCompatActivity {
                     }
                 }
         );
-    }
 
-    private void checkboxs(){
-        if(check1.isChecked()){
-            ptRiesgo += 4;
-        }if (check2.isChecked()){
-            ptRiesgo += 4;
-        }if(check3.isChecked()){
-            ptRiesgo += 4;
-        }if(check4.isChecked()){
-            ptRiesgo += 4;
-        }if(check5.isChecked()){
-            ptRiesgo +=0;
-        }
-    }
+        check1.setOnClickListener(
+                (v)->{
+                    if (check1.isChecked()){
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 3;
 
-    private void cambioBoton(){
-        new  Thread(
-                ()->{
-                    Log.e("----->","entro");
-                    if(check1.isChecked() == true || check2.isChecked()==true || check3.isChecked()==true || check4.isChecked()==true || check5.isChecked()==true ) {
-                       runOnUiThread(
-                               ()->{
-                                   btnContinuar2.setBackgroundColor(Color.parseColor("#AAD123"));
-                               }
-                       );
                     }else {
-                        runOnUiThread(
-                                ()->{
-                                    btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
-                                }
-                        );
-
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
                     }
                 }
-        ).start();
-
+        );
+        check2.setOnClickListener(
+                (v)->{
+                    if (check2.isChecked()){
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 3;
+                    }  else {
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        check3.setOnClickListener(
+                (v)->{
+                    if (check3.isChecked()){
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 3;
+                    }else {
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        check4.setOnClickListener(
+                (v)->{
+                    if (check4.isChecked()){
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 3;
+                    }else {
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
+        check5.setOnClickListener(
+                (v)->{
+                    if (check5.isChecked()){
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#F01856"));
+                        ptRiesgo += 0;
+                    }else {
+                        btnContinuar2.setBackgroundColor(Color.parseColor("#DEDEDE"));
+                    }
+                }
+        );
     }
+
+
 }
