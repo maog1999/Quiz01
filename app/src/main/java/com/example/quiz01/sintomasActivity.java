@@ -115,7 +115,7 @@ public class sintomasActivity extends AppCompatActivity {
                     if (checkBox6.isChecked()) {
                         btnFinalizar.setBackgroundColor(Color.parseColor("#F01856"));
                         ptRiesgo += 4;
-                    }else{
+                    }else {
                         btnFinalizar.setBackgroundColor(Color.parseColor("#DEDEDE"));
                     }
                 }
